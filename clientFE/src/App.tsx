@@ -1,17 +1,24 @@
 import { List, ListItem, ListItemText, Typography } from "@mui/material"
 import { useState, useEffect } from 'react';
+import axios from "axios";
 import './App.css'
 
 function App() {
   const title = 'Welcome to Florin activities page'
 
-  const [activities, setActivities] = useState<Activity>([]);
+  const [activities, setActivities] = useState<Activity[]>([]);
 
+  // useEffect(() => {
+  //   fetch('https://localhost:7218/api/activities')
+  //     .then(response => response.json())
+  //     .then(data => setActivities(data))
+
+  // }, [])
   useEffect(() => {
-    fetch('https://localhost:7218/api/activities')
-      .then(response => response.json())
-      .then(data => setActivities(data))
+    axios.get<Activity[]>('https://localhost:7218/api/activities')
+      .then(response => setActivities(response.data))
 
+    return () => { }
   }, [])
   return (
     <>
