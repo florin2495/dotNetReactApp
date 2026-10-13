@@ -484,3 +484,5 @@ $RECYCLE.BIN/
 
 backend/API/appsettings.json
 backend/API/reactivities.db
+backend/API/reactivities.db-shm
+backend/API/reactivities.db-wal
