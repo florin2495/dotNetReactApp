@@ -1,7 +1,6 @@
 import { List, ListItem, ListItemText, Typography } from "@mui/material"
 import { useState, useEffect } from 'react';
 import axios from "axios";
-import './App.css'
 
 function App() {
   const title = 'Welcome to Florin activities page'
